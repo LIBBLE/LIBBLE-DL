@@ -135,7 +135,6 @@ class worker(node):
             self.pull_params()
             comm_t = time.time() - comm_st
             batch_t =  time.time() - cal_st
-            #print(cal_t, comm_t, batch_t)
         return time.time() - st
 
     def experiment_epoch(self):
