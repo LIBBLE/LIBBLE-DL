@@ -7,7 +7,7 @@ from torch.autograd import Variable
 from torchvision import datasets, transforms
 import torch.utils.data.distributed
 
-from ...src.ring.node import node
+from ...dispytorch.ring.node import node
 from .resnet import *
 import time
 import argparse

@@ -7,8 +7,8 @@ from torch.autograd import Variable
 from torchvision import datasets, transforms
 import torch.utils.data.distributed
 
-from ...src.mapreduce.master import master
-from ...src.mapreduce.worker import worker
+from ...dispytorch.mapreduce.master import master
+from ...dispytorch.mapreduce.worker import worker
 import time
 import argparse
 from .resnet import *

@@ -7,9 +7,9 @@ import torch.utils.data.distributed
 from torchvision import datasets, transforms
 from torch.autograd import Variable
 
-from ...src.ps.coordinator import coordinator
-from ...src.ps.server import server
-from ...src.ps.worker import worker
+from ...dispytorch.ps.coordinator import coordinator
+from ...dispytorch.ps.server import server
+from ...dispytorch.ps.worker import worker
 
 import time
 import argparse
