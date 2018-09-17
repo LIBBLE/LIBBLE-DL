@@ -12,6 +12,7 @@
         * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
         * See the License for the specific language governing permissions and
         * limitations under the License. '''
+        
 import torch.distributed as dist
 class node:
     def __init__(self, rank, servers, model, num_batches, num_epochs, workers, criterion, cuda=False, start_epoch=0):
