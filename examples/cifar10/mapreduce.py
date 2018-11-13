@@ -84,7 +84,7 @@ if __name__ == '__main__':
     dist_sampler = torch.utils.data.distributed.DistributedSampler(data,
                     num_replicas = num_workers,  rank = max(0, rank-1))
     dist_loader = torch.utils.data.DataLoader(data, sampler = dist_sampler, 
-                    batch_size = args.batch_size//num_workers, shuffle=True, **loader_kwargs)
+                    batch_size = args.batch_size//num_workers, shuffle=False, **loader_kwargs)
 
     test_loader = torch.utils.data.DataLoader(
             datasets.CIFAR10('./data', train=False, download=False,
