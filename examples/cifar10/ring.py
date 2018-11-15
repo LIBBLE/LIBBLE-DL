@@ -78,14 +78,14 @@ if __name__ == '__main__':
     ])
 
     loader_kwargs = {}
-    data = datasets.CIFAR10(root='./data', train=True, download=True, transform=transform_train)
+    data = datasets.CIFAR10(root='./data', train=True, download=False, transform=transform_train)
     dist_sampler = torch.utils.data.distributed.DistributedSampler(data,
                     num_replicas = world_size,  rank = rank)
     dist_loader = torch.utils.data.DataLoader(data, sampler = dist_sampler, 
                     batch_size = args.batch_size//world_size, shuffle=False, **loader_kwargs)
         
     test_loader = torch.utils.data.DataLoader(
-            datasets.CIFAR10('./data', train=False, download=True,
+            datasets.CIFAR10('./data', train=False, download=False,
                 transform=transforms.Compose([
                     transforms.ToTensor(),
                     transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))

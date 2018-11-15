@@ -80,7 +80,7 @@ if __name__ == '__main__':
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
     ])
 
-    data = datasets.CIFAR10('./data', train=True, download=True, transform=transform_train)
+    data = datasets.CIFAR10('./data', train=True, download=False, transform=transform_train)
     dist_sampler = torch.utils.data.distributed.DistributedSampler(data,
                     num_replicas = num_workers,  rank = max(0, rank-1))
     dist_loader = torch.utils.data.DataLoader(data, sampler = dist_sampler, 
